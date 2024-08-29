@@ -88,9 +88,35 @@ struct ContentView: View {
             }
             
             // sidescroller dos anexos porra
-            ScrollView{
-                
+            VStack{
+                Text("Anexos: ").font(.system(size: 20)).bold()
+                    .offset(x: -120, y: -50)
             }
+            ScrollView(.horizontal){
+                HStack{
+                    Image("anexo-livro")
+                        .resizable()
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 150)
+                        .cornerRadius(10)
+                    Image("anexo-livro")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width:100, height: 150)
+                        .cornerRadius(10)
+                    Image("anexo-livro")
+                        .resizable()
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 150)
+                        .cornerRadius(10)
+                    Image("anexo-livro")
+                        .resizable()
+                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 150)
+                        .cornerRadius(10)
+                }.padding()
+                
+            }.background(Color.white)
+                .padding()
+                .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 5) // Adiciona a sombra
+                .offset(x: 40, y: -55)
             
         }
     }
