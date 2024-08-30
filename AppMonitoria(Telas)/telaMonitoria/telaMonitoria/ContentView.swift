@@ -112,12 +112,14 @@ struct ContentView: View {
                         .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 150)
                         .cornerRadius(10)
                 }.padding()
+                    .scaledToFill()
+                    .frame(width: 400, height: 200)
+                    //.border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
                 
             }.background(Color.white)
                 .padding()
                 .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 5) // Adiciona a sombra
                 .offset(x: 40, y: -55)
-            
         }
     }
 }
