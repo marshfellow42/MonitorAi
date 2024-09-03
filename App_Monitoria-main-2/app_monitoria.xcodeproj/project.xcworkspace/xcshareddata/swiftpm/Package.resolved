@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "46989693916f56d1186bd59ac15124caef896560",
+        "version" : "1.3.1"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
+        "version" : "509.0.2"
+      }
+    },
+    {
+      "identity" : "swiftui-lint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mateusrodriguesxyz/swiftui-lint",
+      "state" : {
+        "branch" : "beta",
+        "revision" : "2ee4d61b7ebfdc747097954019c23186625f6f82"
+      }
+    }
+  ],
+  "version" : 2
+}
