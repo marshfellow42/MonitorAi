@@ -17,5 +17,6 @@ struct Materia: Identifiable {
     var array_alunos: [String]
     var description: String
     var img_anexos: String
+    var limit_students: Int
 }
 

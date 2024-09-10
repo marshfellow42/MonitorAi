@@ -29,7 +29,8 @@ struct MateriaView: View {
             array_alunos: (materia.array_alunos),
             description: ("\(materia.description)"),
             has_entered: (materia.has_entered),
-            img_anexos: ("\(materia.img_anexos)")
+            img_anexos: ("\(materia.img_anexos)"),
+            limit_students: ((materia.limit_students))
         
         )){
                 ZStack {
@@ -69,6 +70,7 @@ struct MateriaView: View {
 #Preview(traits: .sizeThatFitsLayout) {
     NavigationStack{
         MateriaView(materia: Materia(id: 1,nome_sala: "Marcos", ImageName: "ImageFill", has_entered: true, nome_responsavel: "Alisson Bonnet", hora_disponivel: "18h50m", array_alunos: ["Student1", "Student2"], description: "Ola friends",
-                                     img_anexos: "lua_image"))
+                                     img_anexos: "lua_image",
+                                     limit_students: 20))
     }
 }

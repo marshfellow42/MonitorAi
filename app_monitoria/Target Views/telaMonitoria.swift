@@ -10,24 +10,25 @@ import SwiftUI
 struct telaMonitoria: View {
     
     let id: String
-    @State private var nome_responsavel: String
-    @State private var nome_monitoria: String
-    @State private var hora_disponivel: String
-    @State private var array_alunos: Array<String>
-    @State private var description: String
-    @State private var has_entered: Bool
-    @State private var img_anexos: String
+    @State public var nome_responsavel: String
+    @State public var nome_monitoria: String
+    @State public var hora_disponivel: String
+    @State public var array_alunos: Array<String>
+    @State public var description: String
+    @State public var has_entered: Bool
+    @State public var img_anexos: String
+    @State public var limit_students: Int
 
-    init(id: String, nome_responsavel: String, nome_monitoria: String, hora_disponivel: String, array_alunos: Array<String>, description: String, has_entered: Bool, img_anexos: String) {
-        self.id = id
-        _nome_responsavel = State(initialValue: nome_responsavel)
-        _nome_monitoria = State(initialValue: nome_monitoria)
-        _hora_disponivel = State(initialValue: hora_disponivel)
-        _array_alunos = State(initialValue: array_alunos)
-        _description = State(initialValue: description)
-        _has_entered = State(initialValue: has_entered)
-        _img_anexos = State(initialValue: img_anexos)
-    }
+//    init(id: String, nome_responsavel: String, nome_monitoria: String, hora_disponivel: String, array_alunos: Array<String>, description: String, has_entered: Bool, img_anexos: String) {
+//        self.id = id
+//        _nome_responsavel = State(initialValue: nome_responsavel)
+//        _nome_monitoria = State(initialValue: nome_monitoria)
+//        _hora_disponivel = State(initialValue: hora_disponivel)
+//        _array_alunos = State(initialValue: array_alunos)
+//        _description = State(initialValue: description)
+//        _has_entered = State(initialValue: has_entered)
+//        _img_anexos = State(initialValue: img_anexos)
+//    }
     
     var body: some View {
         
@@ -59,7 +60,8 @@ struct telaMonitoria: View {
                 
                 // CABEÇALHO DA TURMA
                 ZStack{
-                    
+                    // EU ACHO Q ERA P TER UM HSTACK AQUI
+                    // E O FRAME DO BOTAO SAI DA TELA
                     // BANNER
                     Image("banner-monitoria")
                         .resizable()
@@ -88,7 +90,7 @@ struct telaMonitoria: View {
                             
                             Button(action: {
                                 
-                                if array_alunos.count >= 20 {
+                                if array_alunos.count >= limit_students {
                                     if has_entered{
                                         if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
                                             var alunos = SalaData.shared.list_salas[index].array_alunos
@@ -149,9 +151,9 @@ struct telaMonitoria: View {
                             }) {
                                 
                                 
-                                if array_alunos.count >= 20 {
+                                if array_alunos.count >= limit_students {
                                     if has_entered{
-                                        Text("Sair")
+                                        Text("Sair") // PQ TEM DOIS SAIR?????
                                             .foregroundStyle(Color.white)
                                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                             .padding()
@@ -160,28 +162,33 @@ struct telaMonitoria: View {
                                                     .fill(Color.red.opacity(1))
                                                     .background(Color.clear)
                                             )
-                                    }else{
+                                    }
+                                    else{
                                         Text("Cheio")
                                             .foregroundStyle(Color.white)
                                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                            .padding()
+                                            .padding(10)
                                             .background(
                                                 RoundedRectangle(cornerRadius: 10)
-                                                    .fill(Color.blue)
+                                                    .fill(Color.gray)
                                                     .background(Color.clear)
                                             )
+                                            .frame(width: 100, alignment: .center)
+                                            .offset(x:-30)
                                     }
                                 }else{
                                     if has_entered{
                                         Text("Sair")
                                             .foregroundStyle(Color.white)
                                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                                            .padding()
+                                            .padding(10)
                                             .background(
                                                 RoundedRectangle(cornerRadius: 10)
                                                     .fill(Color.red)
                                                     .background(Color.clear)
                                             )
+                                            .frame(width: 100, alignment: .center)
+                                            .offset(x: -30)
                                     }else{
                                         Text("Solicitar")
                                             .foregroundStyle(Color.white)
@@ -192,7 +199,8 @@ struct telaMonitoria: View {
                                                     .fill(Color.green)
                                                     .background(Color.clear)
                                             )
-                                            .offset(x: -30, y: 0)
+                                            .frame(width: 100, alignment: .center)
+                                            .offset(x:-30)
                                     }
                                 }
                             }
@@ -216,6 +224,9 @@ struct telaMonitoria: View {
                         Text("Dias da semana")
                             .padding(.bottom, 5)
                         Text("Horários")
+                            .padding(.bottom, 5)
+                        Text("Alunos:")
+                            .padding(.bottom, 5)
                     }
                     .font(.custom("SF Pro Text Compact", size: 16))
                     .fontWeight(.semibold)
@@ -227,6 +238,10 @@ struct telaMonitoria: View {
                         Text("seg, ter, qua, qui, sex")
                             .padding(.bottom, 3)
                         Text("\(hora_disponivel)")
+                            .padding(.bottom, 3)
+                        Text("\(array_alunos.count)/\(limit_students)")
+                            .padding(.bottom, 3)
+                        
                     }
                     .font(.system(size: 16))
                     .fontWeight(.light)
@@ -311,7 +326,8 @@ struct telaMonitoria: View {
         hora_disponivel: "13h30 - 15h30",
         array_alunos: ["Student1", "Student2"],
         description: "Hola amigo",
-        has_entered: false,
-        img_anexos: "lua_image"
+        has_entered: true,
+        img_anexos: "lua_image",
+        limit_students: 50
     )
 }
