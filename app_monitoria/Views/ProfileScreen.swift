@@ -55,6 +55,7 @@ struct ProfileScreen: View {
                     Text("\(user_description)")
                                 .padding() // Adiciona um espaço interno ao redor do texto
                                 .background(Color.white) // Define a cor de fundo da caixa
+                                .foregroundStyle(.black)
                                 .cornerRadius(10) // Adiciona cantos arredondados à caixa
                                 .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 5) // Adiciona a sombra
                                 //.padding() // Adiciona um espaçamento externo

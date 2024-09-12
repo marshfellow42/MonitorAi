@@ -8,13 +8,20 @@ struct SearchScreen: View {
         NavigationStack {
             ScrollView {
                 VStack {
-                    ForEach(salaData.list_salas.filter { !$0.has_entered }) { materia in
-                        MateriaView(materia: materia)
+                    if searchText.isEmpty {
+                        ForEach(salaData.list_salas.filter { !$0.has_entered }) { monitoria in
+                            MonitoriaView(monitoria: monitoria)
+                        }
+                    } else {
+                        ForEach(salaData.list_salas.filter { !$0.has_entered && $0.nome_sala.contains(searchText) }) { monitoria in
+                            MonitoriaView(monitoria: monitoria)
+                        }
                     }
+                    
                     Spacer()
                 }
             }
-            //.scrollBounceBehavior(.basedOnSize)
+            .scrollBounceBehavior(.basedOnSize)
             .navigationTitle("Pesquisa")
             .searchable(text: $searchText)
         }

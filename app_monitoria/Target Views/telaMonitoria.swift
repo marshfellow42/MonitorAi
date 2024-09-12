@@ -52,7 +52,7 @@ struct telaMonitoria: View {
                 }
             }
             .padding()
-        } .frame(height: 50)
+        } .frame(height: 0)
         
         ScrollView{
             
@@ -67,7 +67,7 @@ struct telaMonitoria: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: UIScreen.main.bounds.width) // DEFINIR LARGURA DA IMAGEM IGUAL A LARGURA DA TELA
-                        .frame(maxHeight: 139) // LIMITAR A ALTURA DA TELA
+                        .frame(maxHeight: 140) // LIMITAR A ALTURA DA TELA
                         .clipped()
                         .scaledToFill()
                     
@@ -225,7 +225,7 @@ struct telaMonitoria: View {
                             .padding(.bottom, 5)
                         Text("Horários")
                             .padding(.bottom, 5)
-                        Text("Alunos:")
+                        Text("Alunos")
                             .padding(.bottom, 5)
                     }
                     .font(.custom("SF Pro Text Compact", size: 16))
@@ -271,46 +271,95 @@ struct telaMonitoria: View {
                 .padding(.bottom, 30)
                 .frame(width: 325)
                
-                // ANEXOS DA TURMA
                 
-                VStack{
-                    Text("Anexos")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack { // Adicionei espaçamento aqui
-                            ForEach(0..<4) { _ in // Use um loop para simplificar
-                                VStack {
-                                    Image("\(img_anexos)")
-                                        .resizable()
-                                        .frame(width: 100, height: 150)
-                                        .cornerRadius(10)
-                                    Text("Nome do arquivo.txt")
-                                        .frame(width: 100)
+                // ####### ANEXOS ################################################
+                
+                if (has_entered){
+                    VStack{
+                        Text("Ver Anexos")
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack { // Adicionei espaçamento aqui
+                                ForEach(0..<5) { _ in // Use um loop para simplificar
+                                    VStack {
+                                        Image("\(img_anexos)")
+                                            .resizable()
+                                            .frame(width: 100, height: 150)
+                                            .cornerRadius(10)
+                                        Text("Nome do arquivo.txt")
+                                            .frame(width: 100)
+                                            .foregroundStyle(.black)
+                                    }
+                                    .padding(.horizontal, 5) // Padding para cada item
                                 }
-                                .padding(.horizontal, 5) // Padding para cada item
                             }
+                            .padding() // Padding adicional para o HStack
                         }
-                        .padding() // Padding adicional para o HStack
-                    }
-                    .frame(height: 200)
-                    .background(
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.white)
-                            //.background(Color.white)
-                            .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 5)
-                            //.stroke(Color.gray.opacity(0.5), lineWidth: 1)
-                            
-                    )
+                        .frame(height: 200)
+                        .background(
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(Color.white)
+                                //.background(Color.white)
+                                .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 5)
+                                //.stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                                
+                        )
 
+                    }
+                    .frame(width: 325)
+                }else{
+                    
+                    
+                    // ####### ANEXOS ################################################
+                    
+                    VStack{
+                        Text("Pre-Vizualizar Anexos")
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack { // Adicionei espaçamento aqui
+                                ForEach(0..<2) { _ in // Use um loop para simplificar
+                                    VStack {
+                                        Image("\(img_anexos)")
+                                            .resizable()
+                                            .frame(width: 100, height: 150)
+                                            .cornerRadius(10)
+                                        Text("Nome do arquivo.txt")
+                                            .frame(width: 100)
+                                            .foregroundStyle(.black)
+                                    }
+                                    .padding(.horizontal, 5) // Padding para cada item
+                                }
+                            }
+                            .padding() // Padding adicional para o HStack
+                        }
+                        .frame(height: 200)
+                        .background(
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(Color.white)
+                                //.background(Color.white)
+                                .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 5)
+                                //.stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                                
+                        )
+
+                    }
+                    .frame(width: 265)
+                    
+                    // ####### ANEXOS ################################################
+                    
                 }
-                .frame(width: 325)
+                
+                // #######################################################
                 
                 
             }
             .frame(maxWidth: .infinity)
-            
+
+            .padding(.bottom, 10)
             
         }
         
@@ -326,7 +375,7 @@ struct telaMonitoria: View {
         hora_disponivel: "13h30 - 15h30",
         array_alunos: ["Student1", "Student2"],
         description: "Hola amigo",
-        has_entered: true,
+        has_entered: false,
         img_anexos: "lua_image",
         limit_students: 50
     )
