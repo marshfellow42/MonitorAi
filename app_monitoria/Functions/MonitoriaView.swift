@@ -6,8 +6,8 @@ struct MonitoriaView: View {
     var is_monitor = UserData.shared.list_users[0].is_monitor
     var matricula = UserData.shared.list_users[0].matricula
     
-    let width_number = 350.0
-    let height_number = 120.0
+    let width_number = 340.0
+    let height_number = 100.0
     
     let corner_radius_number = 20.0
     

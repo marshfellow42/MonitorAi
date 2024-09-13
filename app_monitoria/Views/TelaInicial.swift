@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TelaInicial: View {
-    @AppStorage("darkMode") private var darkMode = false
+    @AppStorage("darkMode") var darkMode = false
     @State private var go_to_settings: Bool = false
     @State private var searchText = ""
     var is_monitor = UserData.shared.list_users[0].is_monitor
@@ -41,8 +41,10 @@ struct TelaInicial: View {
                         }
                     }
                     
-                    if salaData.list_salas.filter({ $0.has_entered || ($0.matricula_responsavel == "20222011060999") }).isEmpty {
+                    if salaData.list_salas.filter({ $0.has_entered && ($0.matricula_responsavel == "20222011060999") }).isEmpty {
                         Text("Não está em nenhuma sala!")
+                            .foregroundStyle(Color.red)
+                            .underline()
                     }
                     
                     Spacer()

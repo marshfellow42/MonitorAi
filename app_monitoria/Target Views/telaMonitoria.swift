@@ -76,7 +76,7 @@ struct telaMonitoria: View {
                     HStack(alignment: .top) {
                         Image("icon-monitoria")
                             .resizable()
-                            .scaledToFit()
+                            //.scaledToFit()
                             .frame(width: 80, height: 80)
                             .clipShape(Circle())
 
