@@ -6,6 +6,22 @@ struct ProfileScreen: View {
     @StateObject private var userData = UserData.shared
     var name = UserData.shared.list_users[0].name
     var user_description = UserData.shared.list_users[0].user_description
+
+    func createImageWithUrl(url: String, image_text: String) -> some View {
+        Button(action: {
+            if let link = URL(string: url), UIApplication.shared.canOpenURL(link) {
+                UIApplication.shared.open(link)
+            }
+        }) {
+            VStack {
+                Image(image_text)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+            }
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+
     
     var body: some View {
         ScrollView(.vertical){
@@ -13,7 +29,6 @@ struct ProfileScreen: View {
                 Text("Perfil de usuário")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
-                    .offset(x: 0, y: -6)
                 
             }
             VStack{
@@ -33,10 +48,10 @@ struct ProfileScreen: View {
                     //.scaledToFit()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        .frame(width: 100,
-                               height: 100,
+                        .frame(width: 200,
+                               height: 200,
                                alignment: .bottom)
-                        .offset(x:10, y:80)
+                        .offset(y:5)
                 }
                 VStack {
                     // Setando a posicao dessa porra mais pra baixo
@@ -64,16 +79,16 @@ struct ProfileScreen: View {
                 // Como os icones estão dispostos de forma horizonral
                 // então eu vou colocar as três imagens numa HStack
                 VStack{
-                    Text("Redes sociais:").font(.title)
+                    Text("Redes sociais:")
+                        .font(.title)
+                    
                     HStack{
                         
-                        Image("twitter-icon")
-                            .resizable()
-                            .frame(width: 50, height: 50)
+                        createImageWithUrl(url: "https://www.x.com/", image_text: "twitter-icon")
                         
-                        Image("instagram-icon")
-                            .resizable()
-                            .frame(width: 50, height: 50)
+                        createImageWithUrl(url: "https://www.instagram.com/apple/", image_text: "instagram-icon")
+                        
+                        
                     }
                 }
                 

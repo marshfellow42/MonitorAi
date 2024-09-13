@@ -3,6 +3,8 @@ import SwiftUI
 struct MonitoriaView: View {
     
     let monitoria: Monitoria
+    var is_monitor = UserData.shared.list_users[0].is_monitor
+    var matricula = UserData.shared.list_users[0].matricula
     
     let width_number = 350.0
     let height_number = 120.0
@@ -24,6 +26,7 @@ struct MonitoriaView: View {
         NavigationLink(destination: telaMonitoria(
             id: ("\(monitoria.id)"),
             nome_responsavel: ("\(monitoria.nome_responsavel)"),
+            matricula_responsavel: ("\(monitoria.matricula_responsavel)"),
             nome_monitoria: ("\(monitoria.nome_sala)"),
             hora_disponivel: ("\(monitoria.hora_disponivel)"),
             array_alunos: (monitoria.array_alunos),
@@ -46,12 +49,53 @@ struct MonitoriaView: View {
                         .frame(width: width_number, height: height_number)
                     
                     HStack {
-                        Text("\(monitoria.nome_sala)")
-                            .foregroundStyle(.white)
-                            .font(.title3)
-                            .bold()
-                            .padding(.leading) // Adds space to the left of the text
-                        Spacer() // Pushes the text to the left side
+//                        Implementar o design da Tela Inicial 2 aqui
+                        
+                        VStack (alignment: .leading) {
+                            Text("\(monitoria.nome_sala)")
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.white)
+                                .font(.title3)
+                                .bold()
+                            
+                            if let index = SalaData.shared.list_salas.firstIndex(where: { $0.matricula_responsavel == "\(matricula)" && is_monitor}) {
+                                    
+                                    var alunos_atuais = SalaData.shared.list_salas[index].array_alunos.count
+                                    var alunos_tot = SalaData.shared.list_salas[index].limit_students
+                                    VStack(alignment: .leading) {
+                                        Text(" ")
+                                        
+                                        Text("\(alunos_atuais)/\(alunos_tot)")
+                                        
+                                    }
+                                    .fontWeight(.regular)
+                                
+                            }else{
+                                
+                                
+                                VStack(alignment: .leading) {
+                                    Text(" ")
+                                    
+                                    Text("\(monitoria.nome_responsavel)")
+                                }
+                                .fontWeight(.regular)
+                                
+                            }
+                            
+                            
+                            
+                        }
+                        .foregroundStyle(.white)
+                        .padding(.leading, 20)
+                        Spacer()
+                        
+                        
+                        
+                        Image("icon-monitoria") // ICON - IMAGEM MENOR
+                            .resizable()
+                            .frame(width: 80,height: 80)
+                            .clipShape(Circle())
+                            .padding(.trailing)
                     }
                     .frame(width: width_number)
 //                    .padding(.bottom, 50)
@@ -69,8 +113,18 @@ struct MonitoriaView: View {
 @available(iOS 17, *)
 #Preview(traits: .sizeThatFitsLayout) {
     NavigationStack{
-        MonitoriaView(monitoria: Monitoria(id: 1,nome_sala: "Marcos", ImageName: "ImageFill", has_entered: true, nome_responsavel: "Alisson Bonnet", hora_disponivel: "18h50m", array_alunos: ["Student1", "Student2"], description: "Ola friends",
-                                     img_anexos: "lua_image", array_messages: ["Ola pessoal, sejam bem vindos a essa monitoria", "Entrem no grupo do telegram t.me/teste"],
-                                     limit_students: 20))
+        MonitoriaView(monitoria: Monitoria(id: 1,
+                                           nome_sala: "Marcos",
+                                           ImageName: "ImageFill",
+                                           has_entered: true,
+                                           nome_responsavel: "Alisson Bonnet",
+                                           matricula_responsavel: "20222011060990",
+                                           hora_disponivel: "18h50m",
+                                           array_alunos: ["Student1", "Student2"],
+                                           description: "Ola friends",
+                                           img_anexos: "lua_image",
+                                           array_messages: ["Ola pessoal, sejam bem vindos a essa monitoria", "Entrem no grupo do telegram t.me/teste"],
+                                           limit_students: 20
+                                          ))
     }
 }

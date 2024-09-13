@@ -22,7 +22,6 @@
 		225256752C7E422F005B668D /* arraySalas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225256742C7E422F005B668D /* arraySalas.swift */; };
 		22B096AD2C6BD01000EA5A75 /* MonitoriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B096AC2C6BD01000EA5A75 /* MonitoriaView.swift */; };
 		22B096B72C6BD4F600EA5A75 /* Monitoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B096B62C6BD4F600EA5A75 /* Monitoria.swift */; };
-		22BA339B2C878B8700251F52 /* TelaInicial2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA339A2C878B8700251F52 /* TelaInicial2.swift */; };
 		22CFFBAC2C8B74C500D1714E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFFBAB2C8B74C500D1714E /* User.swift */; };
 		22CFFBB02C8B770300D1714E /* arrayUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFFBAF2C8B770300D1714E /* arrayUsers.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		225256742C7E422F005B668D /* arraySalas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arraySalas.swift; sourceTree = "<group>"; };
 		22B096AC2C6BD01000EA5A75 /* MonitoriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoriaView.swift; sourceTree = "<group>"; };
 		22B096B62C6BD4F600EA5A75 /* Monitoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitoria.swift; sourceTree = "<group>"; };
-		22BA339A2C878B8700251F52 /* TelaInicial2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaInicial2.swift; sourceTree = "<group>"; };
 		22CFFBAB2C8B74C500D1714E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		22CFFBAF2C8B770300D1714E /* arrayUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arrayUsers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				2214CC4C2BE16BEE006A1C58 /* TelaInicial.swift */,
-				22BA339A2C878B8700251F52 /* TelaInicial2.swift */,
 				2209093D2BEE87930027B3D7 /* SearchScreen.swift */,
 				2214CC542BE175C8006A1C58 /* ProfileScreen.swift */,
 				2214CC502BE17089006A1C58 /* RankScreen.swift */,
@@ -223,7 +220,6 @@
 				22CFFBB02C8B770300D1714E /* arrayUsers.swift in Sources */,
 				225256752C7E422F005B668D /* arraySalas.swift in Sources */,
 				220909422BEE87A30027B3D7 /* StoreScreen.swift in Sources */,
-				22BA339B2C878B8700251F52 /* TelaInicial2.swift in Sources */,
 				2214CC552BE175C8006A1C58 /* ProfileScreen.swift in Sources */,
 				2209093E2BEE87930027B3D7 /* SearchScreen.swift in Sources */,
 				2214CC402BE15F73006A1C58 /* ContentView.swift in Sources */,

@@ -13,6 +13,7 @@ struct Monitoria: Identifiable {
     var ImageName: String
     var has_entered: Bool
     var nome_responsavel: String
+    var matricula_responsavel: String
     var hora_disponivel: String
     var array_alunos: [String]
     var description: String

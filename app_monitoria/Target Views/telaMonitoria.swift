@@ -11,6 +11,7 @@ struct telaMonitoria: View {
     
     let id: String
     @State public var nome_responsavel: String
+    @State public var matricula_responsavel: String
     @State public var nome_monitoria: String
     @State public var hora_disponivel: String
     @State public var array_alunos: Array<String>
@@ -371,6 +372,7 @@ struct telaMonitoria: View {
     telaMonitoria(
         id: "1",
         nome_responsavel: "Alisson Bonnett",
+        matricula_responsavel: "20222011060954",
         nome_monitoria: "Leandro",
         hora_disponivel: "13h30 - 15h30",
         array_alunos: ["Student1", "Student2"],
