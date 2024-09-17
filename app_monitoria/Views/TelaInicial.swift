@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TelaInicial: View {
-    @AppStorage("darkMode") var darkMode = false
+    @AppStorage("darkMode") private var darkMode = false
     @State private var go_to_settings: Bool = false
     @State private var searchText = ""
     var is_monitor = UserData.shared.list_users[0].is_monitor
@@ -27,24 +27,22 @@ struct TelaInicial: View {
                     
                     if searchText.isEmpty {
                         ForEach(salaData.list_salas.filter { ($0.matricula_responsavel == "20222011060999") }) { monitoria in
-                            MonitoriaView(monitoria: monitoria)
+                            MonitoriaViewMain(monitoria: monitoria)
                         }
                         ForEach(salaData.list_salas.filter { $0.has_entered }) { monitoria in
                             MonitoriaView(monitoria: monitoria)
                         }
                     } else {
                         ForEach(salaData.list_salas.filter { ($0.matricula_responsavel == "20222011060999" && is_monitor) && $0.nome_sala.lowercased().contains(searchText.lowercased()) }) { monitoria in
-                            MonitoriaView(monitoria: monitoria)
+                            MonitoriaViewMain(monitoria: monitoria)
                         }
                         ForEach(salaData.list_salas.filter { $0.has_entered && $0.nome_sala.lowercased().contains(searchText.lowercased()) }) { monitoria in
                             MonitoriaView(monitoria: monitoria)
                         }
                     }
                     
-                    if salaData.list_salas.filter({ $0.has_entered && ($0.matricula_responsavel == "20222011060999") }).isEmpty {
+                    if salaData.list_salas.filter({ $0.has_entered || ($0.matricula_responsavel == "20222011060999") }).isEmpty {
                         Text("Não está em nenhuma sala!")
-                            .foregroundStyle(Color.red)
-                            .underline()
                     }
                     
                     Spacer()

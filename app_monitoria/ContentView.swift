@@ -38,7 +38,6 @@ struct ContentView: View {
             }
             
             .preferredColorScheme(darkMode ? .dark : .light) // Apply the color scheme based on the state
-                    
         }
     }
 }

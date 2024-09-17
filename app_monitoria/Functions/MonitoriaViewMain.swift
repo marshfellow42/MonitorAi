@@ -23,7 +23,7 @@
 
 import SwiftUI
 
-struct MonitoriaView: View {
+struct MonitoriaViewMain: View {
     
     let monitoria: Monitoria
     
@@ -44,7 +44,7 @@ struct MonitoriaView: View {
         //let description: String
             // Tudo o que eu preciso adicionar é uma forma de colocar a destination junto com o nome_monitoria, diretamente
         
-        NavigationLink(destination: telaMonitoria(
+        NavigationLink(destination: telaMonitoriaEdicao(
             id: ("\(monitoria.id)"),
             nome_responsavel: ("\(monitoria.nome_responsavel)"),
             matricula_responsavel: ("\(monitoria.matricula_responsavel)"),
@@ -56,11 +56,7 @@ struct MonitoriaView: View {
             img_anexos: ("\(monitoria.img_anexos)"),
             limit_students: ((monitoria.limit_students))
         
-        ))
-        
-        
-        
-        {
+        )){
                 ZStack {
                     RoundedRectangle(cornerRadius: corner_radius_number)
                         .stroke(Color.gray.opacity(0))
@@ -93,7 +89,7 @@ struct MonitoriaView: View {
                             VStack(alignment: .leading) {
                                 Text(" ")
                                 
-                                Text("\(monitoria.nome_responsavel)")
+                                Text("\(monitoria.array_alunos.count)/\(monitoria.limit_students)")
                             }
                             .fontWeight(.regular)
                             // #############################################
@@ -114,7 +110,7 @@ struct MonitoriaView: View {
                     .frame(width: width_number)
 //                    .padding(.bottom, 50)
 //                    .padding(.leading, 15)
-//                    
+//
 //                    HStack {
 //                        Text("")
 //                    }
@@ -127,7 +123,7 @@ struct MonitoriaView: View {
 @available(iOS 17, *)
 #Preview(traits: .sizeThatFitsLayout) {
     NavigationStack{
-        MonitoriaView(monitoria: Monitoria(id: 1,
+        MonitoriaViewMain(monitoria: Monitoria(id: 1,
                                            nome_sala: "Marcos",
                                            ImageName: "ImageFill",
                                            has_entered: true,
@@ -142,3 +138,4 @@ struct MonitoriaView: View {
                                           ))
     }
 }
+

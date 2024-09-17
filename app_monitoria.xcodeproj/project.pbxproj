@@ -20,6 +20,9 @@
 		2214CC572BE179A6006A1C58 /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214CC562BE179A6006A1C58 /* SettingsSheet.swift */; };
 		222D489F2C8B8BD60066048F /* telaMonitoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D489E2C8B8BD60066048F /* telaMonitoria.swift */; };
 		225256752C7E422F005B668D /* arraySalas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225256742C7E422F005B668D /* arraySalas.swift */; };
+		226E3E8C2C99EC9600EE09DD /* listarTodosAlunos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226E3E8B2C99EC9600EE09DD /* listarTodosAlunos.swift */; };
+		226E3E8E2C99ECB100EE09DD /* telaMonitoriaEdicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226E3E8D2C99ECB100EE09DD /* telaMonitoriaEdicao.swift */; };
+		226E3E912C99ECFE00EE09DD /* MonitoriaViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226E3E902C99ECFE00EE09DD /* MonitoriaViewMain.swift */; };
 		22B096AD2C6BD01000EA5A75 /* MonitoriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B096AC2C6BD01000EA5A75 /* MonitoriaView.swift */; };
 		22B096B72C6BD4F600EA5A75 /* Monitoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B096B62C6BD4F600EA5A75 /* Monitoria.swift */; };
 		22CFFBAC2C8B74C500D1714E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFFBAB2C8B74C500D1714E /* User.swift */; };
@@ -42,6 +45,9 @@
 		2214CC562BE179A6006A1C58 /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
 		222D489E2C8B8BD60066048F /* telaMonitoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = telaMonitoria.swift; sourceTree = "<group>"; };
 		225256742C7E422F005B668D /* arraySalas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arraySalas.swift; sourceTree = "<group>"; };
+		226E3E8B2C99EC9600EE09DD /* listarTodosAlunos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = listarTodosAlunos.swift; path = "app_monitoria/Target Views/listarTodosAlunos.swift"; sourceTree = SOURCE_ROOT; };
+		226E3E8D2C99ECB100EE09DD /* telaMonitoriaEdicao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = telaMonitoriaEdicao.swift; sourceTree = "<group>"; };
+		226E3E902C99ECFE00EE09DD /* MonitoriaViewMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonitoriaViewMain.swift; path = app_monitoria/Functions/MonitoriaViewMain.swift; sourceTree = SOURCE_ROOT; };
 		22B096AC2C6BD01000EA5A75 /* MonitoriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoriaView.swift; sourceTree = "<group>"; };
 		22B096B62C6BD4F600EA5A75 /* Monitoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitoria.swift; sourceTree = "<group>"; };
 		22CFFBAB2C8B74C500D1714E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				22B096AC2C6BD01000EA5A75 /* MonitoriaView.swift */,
+				226E3E902C99ECFE00EE09DD /* MonitoriaViewMain.swift */,
 				22B096B62C6BD4F600EA5A75 /* Monitoria.swift */,
 				225256742C7E422F005B668D /* arraySalas.swift */,
 				22CFFBAB2C8B74C500D1714E /* User.swift */,
@@ -136,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				222D489E2C8B8BD60066048F /* telaMonitoria.swift */,
+				226E3E8B2C99EC9600EE09DD /* listarTodosAlunos.swift */,
+				226E3E8D2C99ECB100EE09DD /* telaMonitoriaEdicao.swift */,
 			);
 			path = "Target Views";
 			sourceTree = "<group>";
@@ -216,6 +225,8 @@
 			files = (
 				2214CC4D2BE16BEE006A1C58 /* TelaInicial.swift in Sources */,
 				2214CC572BE179A6006A1C58 /* SettingsSheet.swift in Sources */,
+				226E3E912C99ECFE00EE09DD /* MonitoriaViewMain.swift in Sources */,
+				226E3E8E2C99ECB100EE09DD /* telaMonitoriaEdicao.swift in Sources */,
 				22B096AD2C6BD01000EA5A75 /* MonitoriaView.swift in Sources */,
 				22CFFBB02C8B770300D1714E /* arrayUsers.swift in Sources */,
 				225256752C7E422F005B668D /* arraySalas.swift in Sources */,
@@ -226,6 +237,7 @@
 				22B096B72C6BD4F600EA5A75 /* Monitoria.swift in Sources */,
 				2214CC3E2BE15F73006A1C58 /* app_monitoriaApp.swift in Sources */,
 				2214CC512BE17089006A1C58 /* RankScreen.swift in Sources */,
+				226E3E8C2C99EC9600EE09DD /* listarTodosAlunos.swift in Sources */,
 				220909472BEE90710027B3D7 /* FilterSheet.swift in Sources */,
 				22CFFBAC2C8B74C500D1714E /* User.swift in Sources */,
 				222D489F2C8B8BD60066048F /* telaMonitoria.swift in Sources */,

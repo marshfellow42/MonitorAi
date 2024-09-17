@@ -76,7 +76,7 @@ struct telaMonitoria: View {
                     HStack(alignment: .top) {
                         Image("icon-monitoria")
                             .resizable()
-                            //.scaledToFit()
+                            .scaledToFit()
                             .frame(width: 80, height: 80)
                             .clipShape(Circle())
 
@@ -204,6 +204,8 @@ struct telaMonitoria: View {
                                             .offset(x:-30)
                                     }
                                 }
+                                
+                                
                             }
                             .offset(x: 200, y: -50) // Posicao do botao em si
                         }
@@ -240,8 +242,11 @@ struct telaMonitoria: View {
                             .padding(.bottom, 3)
                         Text("\(hora_disponivel)")
                             .padding(.bottom, 3)
-                        Text("\(array_alunos.count)/\(limit_students)")
-                            .padding(.bottom, 3)
+                        NavigationLink(destination: listarTodosAlunos(alunos_monitoria: array_alunos)) {
+                            Text("\(array_alunos.count)/\(limit_students)")
+                                .padding(.bottom, 3)
+                        }
+                            .foregroundStyle(.black)
                         
                     }
                     .font(.system(size: 16))
