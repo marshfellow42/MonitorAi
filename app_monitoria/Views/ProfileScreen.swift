@@ -24,16 +24,19 @@ struct ProfileScreen: View {
 
     
     var body: some View {
-        ScrollView(.vertical){
+    
+        VStack{
             VStack {
                 Text("Perfil de usuário")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
-                
             }
-            VStack{
+        ScrollView(.vertical){
+            
+            
                 ZStack {
-                    Image("banner-fundo")
+                    
+                    Image("banner-monitoria")
                         .resizable()
                         .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -41,17 +44,16 @@ struct ProfileScreen: View {
                         .frame(width: 512,
                                height: 240,
                                alignment: .bottomLeading)
-                        .offset(x: 0, y:-40)
                     // A foto de perfil do usuario
                     Image("person-icon")
                         .resizable()
                     //.scaledToFit()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        .frame(width: 200,
-                               height: 200,
+                        .frame(width: 180,
+                               height: 180,
                                alignment: .bottom)
-                        .offset(y:5)
+                        .offset(y:70)
                 }
                 VStack {
                     // Setando a posicao dessa porra mais pra baixo
@@ -59,14 +61,19 @@ struct ProfileScreen: View {
                     Text("\(name)")
                         .padding(1)
                         .font(.system(size: 24))
+                        .offset(y:30)
                     Text("Aluno")
                         .bold()
                         .padding(1)
+                        .offset(y:25)
                 }
                 // Stack sobre o aluno
                 .padding(10)
                 VStack {
-                    Text("Sobre mim").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    Text("Sobre mim:")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .frame(width: 200, height: 40, alignment: .leading)
+                        .offset(x:-80, y: 10)
                     Text("\(user_description)")
                                 .padding() // Adiciona um espaço interno ao redor do texto
                                 .background(Color.white) // Define a cor de fundo da caixa
@@ -81,15 +88,19 @@ struct ProfileScreen: View {
                 VStack{
                     Text("Redes sociais:")
                         .font(.title)
+                        .frame(width: 200, height: 40, alignment: .leading)
+                        .offset(x:-80, y: 10)
                     
                     HStack{
                         
                         createImageWithUrl(url: "https://www.x.com/", image_text: "twitter-icon")
+                            
                         
                         createImageWithUrl(url: "https://www.instagram.com/apple/", image_text: "instagram-icon")
                         
                         
                     }
+                    .offset(x:-120, y: 10)
                 }
                 
             }
@@ -97,7 +108,6 @@ struct ProfileScreen: View {
         }
     }
 }
-
 #Preview {
     NavigationStack {
         ProfileScreen()

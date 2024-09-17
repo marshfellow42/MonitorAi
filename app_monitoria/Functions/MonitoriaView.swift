@@ -27,7 +27,7 @@ struct MonitoriaView: View {
     
     let monitoria: Monitoria
     
-    let width_number = 350.0
+    let width_number = 340.0
     let height_number = 120.0
     
     let corner_radius_number = 20.0
@@ -72,6 +72,7 @@ struct MonitoriaView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: corner_radius_number))
                         )
                         .frame(width: width_number, height: height_number)
+                        .padding([.leading, .trailing], 20)
                     
                     HStack {
 //                        Implementar o design da Tela Inicial 2 aqui

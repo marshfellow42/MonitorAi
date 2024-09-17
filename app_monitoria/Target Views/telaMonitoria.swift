@@ -82,9 +82,10 @@ struct telaMonitoria: View {
 
                         VStack(alignment: .leading) {
                             Text("\(nome_monitoria)")
-                                .font(.system(size: 15))
+                                .frame(width: 190, alignment: .leading)
+                                .font(.system(size: 14))
                                 .bold()
-                                .fixedSize(horizontal: false, vertical: true)
+                                //.fixedSize(horizontal: false, vertical: true)
                             
                             Text("Matéria")
                                 .font(.system(size: 13))
@@ -221,37 +222,45 @@ struct telaMonitoria: View {
                 // OUTRAS INFORMACOES
                 // TA GAMBIARRADO MAS SO SUBE FAZER ASSIM
                 HStack{
-                    VStack (alignment: .trailing){
-                        Text("Responsavel")
+                    VStack (alignment: .leading){
+                        Text("Responsavel: ")
                             .padding(.bottom, 5)
-                        Text("Dias da semana")
+                        Text("Dias da semana: ")
                             .padding(.bottom, 5)
-                        Text("Horários")
+                        Text("Horários: ")
                             .padding(.bottom, 5)
-                        Text("Alunos")
+                        Text("Alunos: ")
                             .padding(.bottom, 5)
+                            
                     }
-                    .font(.custom("SF Pro Text Compact", size: 16))
-                    .fontWeight(.semibold)
-                    .padding(.trailing, 20)
+                    .font(.custom("SF Pro Text Compact", size: 20))
+                    .fontWeight(.light)
+                    .padding(.leading, 20)
                     
                     VStack (alignment: .leading){
                         Text("\(nome_responsavel)")
-                            .padding(.bottom, 3)
+                            .underline()
+                            .padding(.leading, 2)
+                            .padding(.bottom, 2)
                         Text("seg, ter, qua, qui, sex")
-                            .padding(.bottom, 3)
+                            .padding(.trailing, 2)
+                            .padding(.bottom, 2)
                         Text("\(hora_disponivel)")
-                            .padding(.bottom, 3)
+                            .padding(.bottom, 2)
                         NavigationLink(destination: listarTodosAlunos(alunos_monitoria: array_alunos)) {
                             Text("\(array_alunos.count)/\(limit_students)")
-                                .padding(.bottom, 3)
+                                .font(.title3)
+                                .fontWeight(.light)
+                                .padding(.bottom, 2)
                         }
                             .foregroundStyle(.black)
                         
                     }
-                    .font(.system(size: 16))
+//                    .font(.system(size: 14))
+//                    .fontWeight(.light)
+                    .font(.title3)
                     .fontWeight(.light)
-                    .padding(.leading, 40)
+                    .padding(.leading, 20)
                 }
                 .padding(.top, 55)
                 .padding(.bottom, 30)
@@ -259,7 +268,7 @@ struct telaMonitoria: View {
                 // DESCRICAO DA TURMA (SOBRE)
                 VStack{
                     Text("Sobre")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Text("""
@@ -294,7 +303,7 @@ struct telaMonitoria: View {
                                             .resizable()
                                             .frame(width: 100, height: 150)
                                             .cornerRadius(10)
-                                        Text("Nome do arquivo.txt")
+                                        Text("Material")
                                             .frame(width: 100)
                                             .foregroundStyle(.black)
                                     }
@@ -333,7 +342,7 @@ struct telaMonitoria: View {
                                             .resizable()
                                             .frame(width: 100, height: 150)
                                             .cornerRadius(10)
-                                        Text("Nome do arquivo.txt")
+                                        Text("Material")
                                             .frame(width: 100)
                                             .foregroundStyle(.black)
                                     }
@@ -381,7 +390,7 @@ struct telaMonitoria: View {
         nome_monitoria: "Leandro",
         hora_disponivel: "13h30 - 15h30",
         array_alunos: ["Student1", "Student2"],
-        description: "Hola amigo",
+        description: "Monitoria sobre o estudo da linguagem Lua, com a ilustre participação de Roberto Ierusalimschy (um dos criadores da linguagem).",
         has_entered: false,
         img_anexos: "lua_image",
         limit_students: 50

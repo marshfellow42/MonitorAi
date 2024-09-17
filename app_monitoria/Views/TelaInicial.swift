@@ -42,7 +42,9 @@ struct TelaInicial: View {
                     }
                     
                     if salaData.list_salas.filter({ $0.has_entered || ($0.matricula_responsavel == "20222011060999") }).isEmpty {
-                        Text("Não está em nenhuma sala!")
+                        Text("O usuário não está em nenhuma sala!")
+                            .foregroundStyle(Color.red)
+                            .underline()
                     }
                     
                     Spacer()
