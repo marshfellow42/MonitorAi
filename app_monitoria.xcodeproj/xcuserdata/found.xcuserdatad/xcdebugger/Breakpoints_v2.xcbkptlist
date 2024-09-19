@@ -68,5 +68,83 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C239A33-FDD0-483C-AAC6-EBA6CEC2C326"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "app_monitoria/Functions/arrayUsers.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "UserData"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2C239A33-FDD0-483C-AAC6-EBA6CEC2C326 - 9b0a830d94de1844"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "app_monitoria.UserData.__allocating_init() -&gt; app_monitoria.UserData"
+                  moduleName = "app_monitoria"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/found/Desktop/appMonitoria/app_monitoria/Functions/arrayUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "2C239A33-FDD0-483C-AAC6-EBA6CEC2C326 - 23f3345430e77636"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "app_monitoria.UserData.() -&gt; app_monitoria.UserData.init() -&gt; app_monitoria.UserData"
+                  moduleName = "app_monitoria"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/found/Desktop/appMonitoria/app_monitoria/Functions/arrayUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "2C239A33-FDD0-483C-AAC6-EBA6CEC2C326 - 4b7073c65d880441"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "app_monitoria.UserData.__allocating_init() -&gt; app_monitoria.UserData"
+                  moduleName = "app_monitoria"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/found/Desktop/appMonitoria%202/app_monitoria/Functions/arrayUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "2C239A33-FDD0-483C-AAC6-EBA6CEC2C326 - f389c49ff9b16a33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "app_monitoria.UserData.() -&gt; app_monitoria.UserData.init() -&gt; app_monitoria.UserData"
+                  moduleName = "app_monitoria"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/found/Desktop/appMonitoria%202/app_monitoria/Functions/arrayUsers.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

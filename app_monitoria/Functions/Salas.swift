@@ -7,11 +7,8 @@
 
 import Foundation
 
-struct User: Identifiable {
+struct Salas: Identifiable {
     var id: Int
+    var idSala: Int
     var matricula: String
-    var name: String
-    var is_monitor: Bool
-    var user_description: String
-    var array_salas: [Int]
 }

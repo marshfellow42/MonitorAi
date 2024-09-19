@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct telaMonitoria: View {
+    @StateObject private var userApp = UserApp.shared
     
     let id: String
     @State public var nome_responsavel: String
@@ -92,69 +93,90 @@ struct telaMonitoria: View {
                             Button(action: {
                                 
                                 if array_alunos.count >= limit_students {
-                                    if has_entered{
-                                        if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
-                                            var alunos = SalaData.shared.list_salas[index].array_alunos
-
-                                            // Remove "Leandro" do array_alunos
-                                            if let leandroIndex = alunos.firstIndex(of: "Leandro") {
-                                                alunos.remove(at: leandroIndex)
+                                        if has_entered {
+                                            if userApp.user_app[0].name == "Leandro" {
+                                                if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
+                                                    var alunos = SalaData.shared.list_salas[index].array_alunos
+                                                    if let leandroIndex = alunos.firstIndex(of: "Leandro") {
+                                                        alunos.remove(at: leandroIndex)
+                                                    }
+                                                    SalaData.shared.list_salas[index].array_alunos = alunos
+                                                    SalaData.shared.list_salas[index].has_entered.toggle()
+                                                    array_alunos = alunos
+                                                    has_entered = SalaData.shared.list_salas[index].has_entered
+                                                }
+                                            } else if userApp.user_app[0].name == "Matues Grande" {
+                                                if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
+                                                    var alunos = SalaData.shared.list_salas[index].array_alunos
+                                                    if let matuesIndex = alunos.firstIndex(of: "Matues Grande") {
+                                                        alunos.remove(at: matuesIndex)
+                                                    }
+                                                    SalaData.shared.list_salas[index].array_alunos = alunos
+                                                    SalaData.shared.list_salas[index].has_entered.toggle()
+                                                    array_alunos = alunos
+                                                    has_entered = SalaData.shared.list_salas[index].has_entered
+                                                }
                                             }
-
-                                            // Atualize o array no estado global
-                                            SalaData.shared.list_salas[index].array_alunos = alunos
-                                            SalaData.shared.list_salas[index].has_entered.toggle()
-
-                                            // Sincronize com o @Binding
-                                            array_alunos = alunos
-                                            has_entered = SalaData.shared.list_salas[index].has_entered
+                                        } else {
+                                            // Sala lotada, exibe popup ou mensagem de erro
                                         }
-                                    }else{
-                                        // exibe um popup dizendo que a sala esta lotada
+                                    } else {
+                                        if has_entered {
+                                            if userApp.user_app[0].name == "Leandro" {
+                                                if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
+                                                    var alunos = SalaData.shared.list_salas[index].array_alunos
+                                                    if let leandroIndex = alunos.firstIndex(of: "Leandro") {
+                                                        alunos.remove(at: leandroIndex)
+                                                    }
+                                                    SalaData.shared.list_salas[index].array_alunos = alunos
+                                                    SalaData.shared.list_salas[index].has_entered.toggle()
+                                                    array_alunos = alunos
+                                                    has_entered = SalaData.shared.list_salas[index].has_entered
+                                                }
+                                            } else if userApp.user_app[0].name == "Matues Grande" {
+                                                if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
+                                                    var alunos = SalaData.shared.list_salas[index].array_alunos
+                                                    if let matuesIndex = alunos.firstIndex(of: "Matues Grande") {
+                                                        alunos.remove(at: matuesIndex)
+                                                    }
+                                                    SalaData.shared.list_salas[index].array_alunos = alunos
+                                                    SalaData.shared.list_salas[index].has_entered.toggle()
+                                                    array_alunos = alunos
+                                                    has_entered = SalaData.shared.list_salas[index].has_entered
+                                                }
+                                            }
+                                        } else {
+                                            if userApp.user_app[0].name == "Leandro" {
+                                                if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
+                                                    var alunos = SalaData.shared.list_salas[index].array_alunos
+                                                    if !alunos.contains("Leandro") {
+                                                        alunos.append("Leandro")
+                                                    }
+                                                    SalaData.shared.list_salas[index].array_alunos = alunos
+                                                    SalaData.shared.list_salas[index].has_entered.toggle()
+                                                    array_alunos = alunos
+                                                    has_entered = SalaData.shared.list_salas[index].has_entered
+                                                }
+                                            } else if userApp.user_app[0].name == "Matues Grande" {
+                                                if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
+                                                    var alunos = SalaData.shared.list_salas[index].array_alunos
+                                                    if !alunos.contains("Matues Grande") {
+                                                        alunos.append("Matues Grande")
+                                                    }
+                                                    SalaData.shared.list_salas[index].array_alunos = alunos
+                                                    SalaData.shared.list_salas[index].has_entered.toggle()
+                                                    array_alunos = alunos
+                                                    has_entered = SalaData.shared.list_salas[index].has_entered
+                                                }
+                                            }
+                                        }
                                     }
-                                }else{
-                                    if has_entered{
-                                        if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
-                                            var alunos = SalaData.shared.list_salas[index].array_alunos
-
-                                            // Remove "Leandro" do array_alunos
-                                            if let leandroIndex = alunos.firstIndex(of: "Leandro") {
-                                                alunos.remove(at: leandroIndex)
-                                            }
-
-                                            // Atualize o array no estado global
-                                            SalaData.shared.list_salas[index].array_alunos = alunos
-                                            SalaData.shared.list_salas[index].has_entered.toggle()
-
-                                            // Sincronize com o @Binding
-                                            array_alunos = alunos
-                                            has_entered = SalaData.shared.list_salas[index].has_entered
-                                        }
-                                    }else{
-                                        if let index = SalaData.shared.list_salas.firstIndex(where: { $0.id == Int(id) }) {
-                                            var alunos = SalaData.shared.list_salas[index].array_alunos
-
-                                            if !alunos.contains("Leandro") {
-                                                alunos.append("Leandro")
-                                            }
-
-                                            // Atualize o array no estado global
-                                            SalaData.shared.list_salas[index].array_alunos = alunos
-                                            SalaData.shared.list_salas[index].has_entered.toggle()
-
-                                            // Sincronize com o @Binding
-                                            array_alunos = alunos
-                                            has_entered = SalaData.shared.list_salas[index].has_entered
-                                        }
-                                    }
-                                }
-                                
                             }) {
                                 
                                 
                                 if array_alunos.count >= limit_students {
                                     if has_entered{
-                                        Text("Sair") // PQ TEM DOIS SAIR?????
+                                        Text("Sair")
                                             .foregroundStyle(Color.white)
                                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                             .padding()
@@ -178,6 +200,8 @@ struct telaMonitoria: View {
                                             .offset(x:-30)
                                     }
                                 }else{
+                                    // has_entered && array_alunos.contains("Matues Grande")
+                                    // Basicamente a solucao para esse problema é checar se o array_alunos contem o nome do aluno atual lá
                                     if has_entered{
                                         Text("Sair")
                                             .foregroundStyle(Color.white)

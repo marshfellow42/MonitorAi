@@ -1,16 +1,27 @@
 import SwiftUI
 
 struct TelaInicial: View {
+    @StateObject private var userApp = UserApp.shared
     @AppStorage("darkMode") private var darkMode = false
     @State private var go_to_settings: Bool = false
     @State private var searchText = ""
-    var is_monitor = UserData.shared.list_users[0].is_monitor
+   
+//    ForEach(salasUser.salas_user.filter { $0.matricula == userApp.user_app[0].matricula }) { monitoria in
+//        // Usar o idSala da monitoria atual para filtrar as salas
+//        let idSala = monitoria.idSala
+//        
+//        // Filtrar as salas correspondentes ao idSala
+//        let salasCorrespondentes = salaData.list_salas.filter { $0.id == idSala }
+//
+//        ForEach(salasCorrespondentes) { sala in
+//            MonitoriaViewMain(monitoria: sala)}
+//    }
     
     @StateObject private var salaData = SalaData.shared // Usar o singleton compartilhado
 
     var body: some View {
         NavigationStack {
-            if(is_monitor){
+            if(userApp.user_app[0].is_monitor){
                 Button {
                     NavigationLink(destination: RankScreen()) {
                         Text("Olá")
@@ -25,15 +36,24 @@ struct TelaInicial: View {
             ScrollView {
                 VStack {
                     
-                    if searchText.isEmpty {
-                        ForEach(salaData.list_salas.filter { ($0.matricula_responsavel == "20222011060999") }) { monitoria in
+                    if searchText.isEmpty && userApp.user_app[0].name == "Leandro"{
+                        ForEach(salaData.list_salas.filter { ($0.matricula_responsavel == "20222011060999" ) }) { monitoria in
                             MonitoriaViewMain(monitoria: monitoria)
                         }
-                        ForEach(salaData.list_salas.filter { $0.has_entered }) { monitoria in
+                        ForEach(salaData.list_salas.filter { $0.has_entered && $0.array_alunos.contains("Leandro") }) { monitoria in
                             MonitoriaView(monitoria: monitoria)
                         }
+
+                    } else if searchText.isEmpty {
+                        ForEach(salaData.list_salas.filter { ($0.matricula_responsavel == "20222011060999" ) }) { monitoria in
+                            MonitoriaViewMain(monitoria: monitoria)
+                        }
+                        ForEach(salaData.list_salas.filter { $0.has_entered && $0.array_alunos.contains("Matues Grande") }) { monitoria in
+                            MonitoriaView(monitoria: monitoria)
+                        }
+                        
                     } else {
-                        ForEach(salaData.list_salas.filter { ($0.matricula_responsavel == "20222011060999" && is_monitor) && $0.nome_sala.lowercased().contains(searchText.lowercased()) }) { monitoria in
+                        ForEach(salaData.list_salas.filter { ($0.matricula_responsavel == "20222011060999" && userApp.user_app[0].is_monitor) && $0.nome_sala.lowercased().contains(searchText.lowercased()) }) { monitoria in
                             MonitoriaViewMain(monitoria: monitoria)
                         }
                         ForEach(salaData.list_salas.filter { $0.has_entered && $0.nome_sala.lowercased().contains(searchText.lowercased()) }) { monitoria in
@@ -41,7 +61,9 @@ struct TelaInicial: View {
                         }
                     }
                     
-                    if salaData.list_salas.filter({ $0.has_entered || ($0.matricula_responsavel == "20222011060999") }).isEmpty {
+                    if salaData.list_salas.filter({ $0.has_entered || ($0.matricula_responsavel == "20222011060999") && userApp.user_app[0].name == "Leandro" }).isEmpty {
+                        Text("Não está em nenhuma sala!")
+                    } else if salaData.list_salas.filter({ $0.has_entered || ($0.matricula_responsavel == "20222011060999") && userApp.user_app[0].name == "Mateus Grande" }).isEmpty {
                         Text("Não está em nenhuma sala!")
                     }
                     
