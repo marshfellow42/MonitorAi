@@ -294,7 +294,7 @@ struct telaMonitoriaEdicao: View {
                                         .resizable()
                                         .frame(width: 100, height: 150)
                                         .cornerRadius(10)
-                                    Text("Nome do arquivo.txt")
+                                    Text("Material")
                                         .frame(width: 100)
                                         .foregroundStyle(.black)
                                 }

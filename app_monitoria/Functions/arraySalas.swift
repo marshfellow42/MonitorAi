@@ -28,20 +28,20 @@ class SalaData: ObservableObject {
                                   limit_students: 20))
 
         list_salas.append(Monitoria(id: 2,
-                                  nome_sala: "Los Pollos Hermanos",
+                                  nome_sala: "Química Analítica",
                                   ImageName: "ImageFill",
                                   has_entered: false,
                                   nome_responsavel: "Renata Silva",
                                   matricula_responsavel: "20222011060100",
                                   hora_disponivel: "13h30 - 15h",
                                   array_alunos: ["Fatima Oliveira", "Gonzada Lima", "Arpuroo Silva", "Ana Costa", "Bruno Almeida", "Clara Fernandes", "Diego Ribeiro", "Eduarda Pinto", "Felipe Castro", "Gabriel Lima", "Heloísa Rocha", "Igor Martins", "Júlia Costa", "Karla Almeida", "Lucas Nunes", "Mariana Santos", "Nathalia Silva", "Otávio Lima", "Paula Oliveira", "Quiteria Ramos"],
-                                  description: "Sala de reunião para quem quer aprender mais de química!",
+                                  description: "Monitoria sobre o estudo de \'Química Analítica\'. Seja bem vindo!.",
                                   img_anexos: "quimica_image",
                                   array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 20))
 
         list_salas.append(Monitoria(id: 3,
-                                  nome_sala: "Fazedores de prédios",
+                                  nome_sala: "Resistencia dos materiais",
                                   ImageName: "ImageFill",
                                   has_entered: false,
                                   nome_responsavel: "Almir Silva",
@@ -50,7 +50,7 @@ class SalaData: ObservableObject {
                                   array_alunos: ["Pires Souza", "Gonzada Lima", "Arpuroo Ferreira", "Lucas Almeida", "Mariana Costa", "Nicolas Pinto", "Olga Fernandes", "Pedro Silva", "Quiteria Oliveira", "Rafael Souza", "Sofia Lima", "Tiago Costa", "Ursula Almeida", "Valter Pereira", "Walter Silva", "Ximena Rodrigues", "Yara Santos", "Zé Silva"],
                                   description: "Os mestres da obra",
                                   img_anexos: "predio_image",
-                                  array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
+                                  array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!  Aqui temos como foco o estudo dos conteúdos tangentes à cadeira de \'Resistência dos Materiais\' ", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 40))
 
         list_salas.append(Monitoria(id: 4,
@@ -67,7 +67,7 @@ class SalaData: ObservableObject {
                                   limit_students: 50))
 
         list_salas.append(Monitoria(id: 5,
-                                  nome_sala: "Matematicando",
+                                  nome_sala: "Cálculo 1",
                                   ImageName: "ImageFill",
                                   has_entered: false,
                                   nome_responsavel: "Gevane Lima",
@@ -94,6 +94,18 @@ class SalaData: ObservableObject {
 
         list_salas.append(Monitoria(id: 7,
                                   nome_sala: "Monitoria de Lua",
+                                  ImageName: "ImageFill",
+                                  has_entered: false,
+                                  nome_responsavel: "Roberto Ierusalimschy",
+                                  matricula_responsavel: "20222011060105",
+                                  hora_disponivel: "18h50 - 19h50",
+                                  array_alunos: ["Mateus Oliveira", "Roberto Ierusalimschy", "Mariana Costa", "Evelyn Pinto", "Gaby Lima", "Flávio Almeida", "Ruth Fernandes", "Silvio Santos"],
+                                  description: "Venha aprender desde o básico ao avançado em Lua",
+                                  img_anexos: "lua_image",
+                                  array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
+                                  limit_students: 80))
+        list_salas.append(Monitoria(id: 100,
+                                  nome_sala: "(SALA_TESTE) LOREM LOREM LOREM",
                                   ImageName: "ImageFill",
                                   has_entered: false,
                                   nome_responsavel: "Roberto Ierusalimschy",

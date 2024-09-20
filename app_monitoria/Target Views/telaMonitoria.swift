@@ -246,16 +246,16 @@ struct telaMonitoria: View {
                 // TA GAMBIARRADO MAS SO SUBE FAZER ASSIM
                 HStack{
                     VStack (alignment: .trailing){
-                        Text("Responsavel")
+                        Text("Responsável: ")
                             .padding(.bottom, 5)
-                        Text("Dias da semana")
+                        Text("Dias da semana: ")
                             .padding(.bottom, 5)
-                        Text("Horários")
+                        Text("Horários: ")
                             .padding(.bottom, 5)
-                        Text("Alunos")
+                        Text("Alunos: ")
                             .padding(.bottom, 5)
                     }
-                    .font(.custom("SF Pro Text Compact", size: 16))
+                    .font(.custom("SF Pro Text Compact", size: 18))
                     .fontWeight(.semibold)
                     .padding(.trailing, 20)
                     
@@ -273,9 +273,8 @@ struct telaMonitoria: View {
                             .foregroundStyle(.black)
                         
                     }
-                    .font(.system(size: 16))
+                    .font(.system(size: 18))
                     .fontWeight(.light)
-                    .padding(.leading, 40)
                 }
                 .padding(.top, 55)
                 .padding(.bottom, 30)
@@ -318,7 +317,7 @@ struct telaMonitoria: View {
                                             .resizable()
                                             .frame(width: 100, height: 150)
                                             .cornerRadius(10)
-                                        Text("Nome do arquivo.txt")
+                                        Text("Material")
                                             .frame(width: 100)
                                             .foregroundStyle(.black)
                                     }
@@ -357,7 +356,7 @@ struct telaMonitoria: View {
                                             .resizable()
                                             .frame(width: 100, height: 150)
                                             .cornerRadius(10)
-                                        Text("Nome do arquivo.txt")
+                                        Text("Material")
                                             .frame(width: 100)
                                             .foregroundStyle(.black)
                                     }
