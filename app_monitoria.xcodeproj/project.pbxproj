@@ -27,6 +27,7 @@
 		22B096B72C6BD4F600EA5A75 /* Monitoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B096B62C6BD4F600EA5A75 /* Monitoria.swift */; };
 		22CFFBAC2C8B74C500D1714E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFFBAB2C8B74C500D1714E /* User.swift */; };
 		22CFFBB02C8B770300D1714E /* arrayUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFFBAF2C8B770300D1714E /* arrayUsers.swift */; };
+		22FF4BAB2C9DE191007452AC /* TelaCriarMonitoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF4BAA2C9DE191007452AC /* TelaCriarMonitoria.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		22B096B62C6BD4F600EA5A75 /* Monitoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitoria.swift; sourceTree = "<group>"; };
 		22CFFBAB2C8B74C500D1714E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		22CFFBAF2C8B770300D1714E /* arrayUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arrayUsers.swift; sourceTree = "<group>"; };
+		22FF4BAA2C9DE191007452AC /* TelaCriarMonitoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelaCriarMonitoria.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				222D489E2C8B8BD60066048F /* telaMonitoria.swift */,
 				226E3E8B2C99EC9600EE09DD /* listarTodosAlunos.swift */,
+				22FF4BAA2C9DE191007452AC /* TelaCriarMonitoria.swift */,
 				226E3E8D2C99ECB100EE09DD /* telaMonitoriaEdicao.swift */,
 			);
 			path = "Target Views";
@@ -239,6 +242,7 @@
 				2214CC512BE17089006A1C58 /* RankScreen.swift in Sources */,
 				226E3E8C2C99EC9600EE09DD /* listarTodosAlunos.swift in Sources */,
 				220909472BEE90710027B3D7 /* FilterSheet.swift in Sources */,
+				22FF4BAB2C9DE191007452AC /* TelaCriarMonitoria.swift in Sources */,
 				22CFFBAC2C8B74C500D1714E /* User.swift in Sources */,
 				222D489F2C8B8BD60066048F /* telaMonitoria.swift in Sources */,
 			);

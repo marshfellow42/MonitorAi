@@ -10,6 +10,7 @@ import SwiftUI
 struct telaMonitoria: View {
     
     let id: String
+//    @State public var user: Int = 1
     @State public var nome_responsavel: String
     @State public var matricula_responsavel: String
     @State public var nome_monitoria: String
@@ -30,6 +31,18 @@ struct telaMonitoria: View {
 //        _has_entered = State(initialValue: has_entered)
 //        _img_anexos = State(initialValue: img_anexos)
 //    }
+    
+//    class User {
+//        var nome: String
+////        var id: Int
+//        
+//        init(nome: String/*, id: Int*/) {
+//            self.nome = nome
+////            self.id = id
+//        }
+//    }
+    
+//    var users = ["Mateus", "Lucas"]
     
     var body: some View {
         
@@ -61,8 +74,7 @@ struct telaMonitoria: View {
                 
                 // CABEÇALHO DA TURMA
                 ZStack{
-                    // EU ACHO Q ERA P TER UM HSTACK AQUI
-                    // E O FRAME DO BOTAO SAI DA TELA
+                    
                     // BANNER
                     Image("banner-monitoria")
                         .resizable()
@@ -222,20 +234,20 @@ struct telaMonitoria: View {
                 // OUTRAS INFORMACOES
                 // TA GAMBIARRADO MAS SO SUBE FAZER ASSIM
                 HStack{
-                    VStack (alignment: .leading){
-                        Text("Responsavel: ")
+                    VStack (alignment: .trailing){
+                        Text("Responsavel")
                             .padding(.bottom, 5)
-                        Text("Dias da semana: ")
+                        Text("Dias da semana")
                             .padding(.bottom, 5)
-                        Text("Horários: ")
+                        Text("Horários")
                             .padding(.bottom, 5)
-                        Text("Alunos: ")
+                        Text("Alunos")
                             .padding(.bottom, 5)
-                            
+                        
                     }
                     .font(.custom("SF Pro Text Compact", size: 20))
                     .fontWeight(.light)
-                    .padding(.leading, 20)
+                    //.padding(.leading, 20)
                     
                     VStack (alignment: .leading){
                         Text("\(nome_responsavel)")
@@ -262,7 +274,7 @@ struct telaMonitoria: View {
                     .fontWeight(.light)
                     .padding(.leading, 20)
                 }
-                .padding(.top, 55)
+                .padding(.top, 70)
                 .padding(.bottom, 30)
                 
                 // DESCRICAO DA TURMA (SOBRE)
@@ -384,7 +396,7 @@ struct telaMonitoria: View {
 
 #Preview {
     telaMonitoria(
-        id: "1",
+        id: "2",
         nome_responsavel: "Alisson Bonnett",
         matricula_responsavel: "20222011060954",
         nome_monitoria: "Leandro",
