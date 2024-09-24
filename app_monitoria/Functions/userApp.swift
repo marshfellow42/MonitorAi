@@ -11,8 +11,6 @@ class UserApp: ObservableObject {
     }
     
     func initializeUsers() {
-        // Evitar inicialização múltipla
-        guard user_app.isEmpty else { return }
 
         user_app.append(UserData.shared.list_users[0])
 //        user_app.append(User(id: 1,

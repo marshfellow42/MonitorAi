@@ -12,7 +12,7 @@ class SalaData: ObservableObject {
     
     func initializeSalas() {
         // Evitar inicialização múltipla
-        guard list_salas.isEmpty else { return }
+        
 
         list_salas.append(Monitoria(id: 1,
                                   nome_sala: "Info é o poder",

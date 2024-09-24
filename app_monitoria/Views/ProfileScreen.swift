@@ -28,7 +28,7 @@ struct ProfileScreen: View {
                 }
                 VStack {
                     ZStack {
-                        Image("banner-fundo")
+                        Image("banner-monitoria")
                             .resizable()
                             .scaledToFit()
                             .clipShape(RoundedRectangle(cornerRadius: 10))

@@ -44,9 +44,15 @@ struct UserSheet: View {
                                         .bold()
                                     
                                     VStack(alignment: .leading) {
+                                        
+                                        Text(usuario.is_monitor ? "Monitor" : "Aluno")
+                                            .font(.title3)
+                                            .bold()
                                         Text(" ")
-                                        Text(usuario.is_monitor ? "É Monitor" : "Não é monitor")
                                         Text("\(usuario.matricula)")
+                                            .underline()
+                                            .font(.title3)
+                                            .bold()
                                     }
                                     .fontWeight(.regular)
                                     .foregroundStyle(.white)
@@ -65,7 +71,7 @@ struct UserSheet: View {
                     })
                     .padding(.vertical, 8)
                 }
-                .navigationTitle("Trocar de Usuário")
+                .navigationTitle("Contas: ")
             }
         }
     }

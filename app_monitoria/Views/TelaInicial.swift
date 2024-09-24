@@ -21,16 +21,16 @@ struct TelaInicial: View {
 
     var body: some View {
         NavigationStack {
-            if(userApp.user_app[0].is_monitor){
-                Button {
-                    NavigationLink(destination: RankScreen()) {
-                        Text("Olá")
-                    }
-                } label: {
-                    Label("Nova Sala", systemImage: "plus.app.fill")
-                    
-                }
-            }
+//            if(userApp.user_app[0].is_monitor){
+//                Button {
+//                    NavigationLink(destination: RankScreen()) {
+//                        Text("Olá")
+//                    }
+//                } label: {
+//                    Label("Nova Sala", systemImage: "plus.app.fill")
+//                    
+//                }
+//            }
             
 
             ScrollView {

@@ -11,8 +11,6 @@ class UserData: ObservableObject {
     }
     
     func initializeUsers() {
-        // Evitar inicialização múltipla
-        guard list_users.isEmpty else { return }
 
         list_users.append(User(id: 1,
                                matricula: "20222011060999",
@@ -23,9 +21,9 @@ class UserData: ObservableObject {
                               ))
         list_users.append(User(id: 2,
                                matricula: "20222011060904",
-                               name: "Matues Grande",
+                               name: "Mateus Grande",
                                is_monitor: true,
-                               user_description: "Meu nome é Matues. Curso o 4 período de Informática no IFCE - Campus Fortaleza",
+                               user_description: "Meu nome é Mateus. Curso o 4 período de Informática no IFCE - Campus Fortaleza",
                                array_salas: [1, 2, 3]
                               ))
 
