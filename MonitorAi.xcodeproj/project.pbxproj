@@ -188,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2214CC352BE15F73006A1C58 /* Build configuration list for PBXProject "app_monitoria" */;
+			buildConfigurationList = 2214CC352BE15F73006A1C58 /* Build configuration list for PBXProject "MonitorAi" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -449,7 +449,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2214CC352BE15F73006A1C58 /* Build configuration list for PBXProject "app_monitoria" */ = {
+		2214CC352BE15F73006A1C58 /* Build configuration list for PBXProject "MonitorAi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2214CC472BE15F74006A1C58 /* Debug */,

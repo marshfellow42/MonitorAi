@@ -54,7 +54,8 @@ struct MonitoriaView: View {
             description: ("\(monitoria.description)"),
             has_entered: (monitoria.has_entered),
             img_anexos: ("\(monitoria.img_anexos)"),
-            limit_students: ((monitoria.limit_students))
+            limit_students: ((monitoria.limit_students)),
+            img_monitoria_photo: ("\(monitoria.img_monitoria_photo)")
         
         ))
         
@@ -105,17 +106,28 @@ struct MonitoriaView: View {
                         Spacer()
                         
                         
-                        
-                        Image("icon-monitoria") // ICON - IMAGEM MENOR
+                        Image(monitoria.img_monitoria_photo) // ICON - IMAGEM MENOR
                             .resizable()
-                            .frame(width: 80,height: 80)
-                            .clipShape(Circle())
-                            .padding(.trailing)
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                            .shadow(radius: 5)
+                        
+                        
+//                            .resizable()
+//                            .clipShape(Circle())
+//                            .overlay(Circle().stroke(Color.black, lineWidth: 2)) // Stroke in black
+//                            .frame(width: 80, height: 80)
+//                            .padding(.trailing)
+
+                        
+                        
                     }
                     .frame(width: width_number)
 //                    .padding(.bottom, 50)
-//                    .padding(.leading, 15)
-//                    
+                    .padding(.trailing, 15)
+//
 //                    HStack {
 //                        Text("")
 //                    }
@@ -139,7 +151,8 @@ struct MonitoriaView: View {
                                            description: "Ola friends",
                                            img_anexos: "lua_image",
                                            array_messages: ["Ola pessoal, sejam bem vindos a essa monitoria", "Entrem no grupo do telegram t.me/teste"],
-                                           limit_students: 20
+                                           limit_students: 20,
+                                           img_monitoria_photo: "icon-monitoria"
                                           ))
     }
 }

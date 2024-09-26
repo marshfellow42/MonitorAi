@@ -20,6 +20,9 @@ struct telaMonitoria: View {
     @State public var has_entered: Bool
     @State public var img_anexos: String
     @State public var limit_students: Int
+    @State public var img_monitoria_photo: String
+    
+    @AppStorage("darkMode") private var darkMode = false
 
 //    init(id: String, nome_responsavel: String, nome_monitoria: String, hora_disponivel: String, array_alunos: Array<String>, description: String, has_entered: Bool, img_anexos: String) {
 //        self.id = id
@@ -86,11 +89,13 @@ struct telaMonitoria: View {
                     
                     // ICONE DA MONITORIA
                     HStack(alignment: .top) {
-                        Image("icon-monitoria")
+                        Image("\(img_monitoria_photo)")
                             .resizable()
-                            .scaledToFit()
+                            .scaledToFill()
                             .frame(width: 80, height: 80)
-                            .clipShape(Circle())
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                            .shadow(radius: 5)
 
                         VStack(alignment: .leading) {
                             Text("\(nome_monitoria)")
@@ -265,7 +270,7 @@ struct telaMonitoria: View {
                                 .fontWeight(.light)
                                 .padding(.bottom, 2)
                         }
-                            .foregroundStyle(.black)
+                            .foregroundStyle(darkMode ? .white : .black)
                         
                     }
 //                    .font(.system(size: 14))
@@ -405,6 +410,7 @@ struct telaMonitoria: View {
         description: "Monitoria sobre o estudo da linguagem Lua, com a ilustre participação de Roberto Ierusalimschy (um dos criadores da linguagem).",
         has_entered: false,
         img_anexos: "lua_image",
-        limit_students: 50
+        limit_students: 50,
+        img_monitoria_photo: "icon-monitoria"
     )
 }

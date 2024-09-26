@@ -47,13 +47,19 @@ struct ProfileScreen: View {
                     // A foto de perfil do usuario
                     Image("person-icon")
                         .resizable()
-                    //.scaledToFit()
-                        .aspectRatio(contentMode: .fit)
+                        .scaledToFill()
+                        .frame(width: 180, height: 180)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        .frame(width: 180,
-                               height: 180,
-                               alignment: .bottom)
-                        .offset(y:70)
+                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                        .shadow(radius: 10)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .aspectRatio(contentMode: .fit)
+//                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+//                        .frame(width: 180,
+//                               height: 180,
+//                               alignment: .bottom)
+                       .offset(y:70)
                 }
                 VStack {
                     // Setando a posicao dessa porra mais pra baixo

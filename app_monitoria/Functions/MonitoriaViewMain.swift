@@ -134,7 +134,8 @@ struct MonitoriaViewMain: View {
                                            description: "Ola friends",
                                            img_anexos: "lua_image",
                                            array_messages: ["Ola pessoal, sejam bem vindos a essa monitoria", "Entrem no grupo do telegram t.me/teste"],
-                                           limit_students: 20
+                                           limit_students: 20,
+                                           img_monitoria_photo: "icon-monitoria"
                                           ))
     }
 }

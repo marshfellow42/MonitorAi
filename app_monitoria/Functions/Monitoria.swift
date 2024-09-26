@@ -20,5 +20,6 @@ struct Monitoria: Identifiable {
     var img_anexos: String
     var array_messages: [String]
     var limit_students: Int
+    var img_monitoria_photo: String
 }
 
