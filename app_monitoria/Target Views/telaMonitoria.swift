@@ -21,8 +21,11 @@ struct telaMonitoria: View {
     @State public var img_anexos: String
     @State public var limit_students: Int
     @State public var img_monitoria_photo: String
+    @State public var banner_monitoria: String
     
     @AppStorage("darkMode") private var darkMode = false
+    
+    @State private var showingAlert = false
 
 //    init(id: String, nome_responsavel: String, nome_monitoria: String, hora_disponivel: String, array_alunos: Array<String>, description: String, has_entered: Bool, img_anexos: String) {
 //        self.id = id
@@ -55,19 +58,19 @@ struct telaMonitoria: View {
             }
             .navigationTitle("Monitoria") // Título da tela
             .navigationBarTitleDisplayMode(.inline) // Exibe o título de forma inline
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("About") {
-                        print("About tapped!")
-                    }
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Help") {
-                        print("Help tapped!")
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button("About") {
+//                        print("About tapped!")
+//                    }
+//                }
+//                
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button("Help") {
+//                        print("Help tapped!")
+//                    }
+//                }
+//            }
             .padding()
         } .frame(height: 0)
         
@@ -79,7 +82,7 @@ struct telaMonitoria: View {
                 ZStack{
                     
                     // BANNER
-                    Image("banner-monitoria")
+                    Image("\(banner_monitoria)")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: UIScreen.main.bounds.width) // DEFINIR LARGURA DA IMAGEM IGUAL A LARGURA DA TELA
@@ -99,13 +102,13 @@ struct telaMonitoria: View {
 
                         VStack(alignment: .leading) {
                             Text("\(nome_monitoria)")
-                                .frame(width: 190, alignment: .leading)
-                                .font(.system(size: 14))
+                                .frame(width: 160, alignment: .leading)
+                                .font(.system(size: 20))
                                 .bold()
                                 //.fixedSize(horizontal: false, vertical: true)
                             
-                            Text("Matéria")
-                                .font(.system(size: 13))
+//                            Text("Matéria")
+//                                .font(.system(size: 13))
                             
                             Button(action: {
                                 
@@ -128,7 +131,7 @@ struct telaMonitoria: View {
                                             has_entered = SalaData.shared.list_salas[index].has_entered
                                         }
                                     }else{
-                                        // exibe um popup dizendo que a sala esta lotada
+                                       
                                     }
                                 }else{
                                     if has_entered{
@@ -183,7 +186,9 @@ struct telaMonitoria: View {
                                             )
                                     }
                                     else{
-                                        Text("Cheio")
+                                        Button("Cheio") {
+                                            showingAlert = true
+                                        }
                                             .foregroundStyle(Color.white)
                                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                             .padding(10)
@@ -194,6 +199,9 @@ struct telaMonitoria: View {
                                             )
                                             .frame(width: 100, alignment: .center)
                                             .offset(x:-30)
+                                        .alert("Monitoria Cheia", isPresented: $showingAlert) {
+                                            Button("Ok", role: .cancel) { }
+                                        }
                                     }
                                 }else{
                                     if has_entered{
@@ -404,13 +412,14 @@ struct telaMonitoria: View {
         id: "2",
         nome_responsavel: "Alisson Bonnett",
         matricula_responsavel: "20222011060954",
-        nome_monitoria: "Leandro",
+        nome_monitoria: "Reminiscencia do Passado",
         hora_disponivel: "13h30 - 15h30",
         array_alunos: ["Student1", "Student2"],
         description: "Monitoria sobre o estudo da linguagem Lua, com a ilustre participação de Roberto Ierusalimschy (um dos criadores da linguagem).",
         has_entered: false,
         img_anexos: "lua_image",
         limit_students: 50,
-        img_monitoria_photo: "icon-monitoria"
+        img_monitoria_photo: "icon-monitoria",
+        banner_monitoria: "banner-monitoria"
     )
 }

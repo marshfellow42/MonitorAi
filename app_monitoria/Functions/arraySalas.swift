@@ -26,7 +26,8 @@ class SalaData: ObservableObject {
                                   img_anexos: "info_image",
                                   array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 20,
-                                  img_monitoria_photo: "icon-monitoria-info"))
+                                  img_monitoria_photo: "icon-monitoria-info",
+                                  banner_monitoria: "banner-monitoria-info"))
 
         list_salas.append(Monitoria(id: 2,
                                   nome_sala: "Química Analítica",
@@ -40,10 +41,11 @@ class SalaData: ObservableObject {
                                   img_anexos: "quimica_image",
                                   array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 20,
-                                  img_monitoria_photo: "icon-monitoria-quimica"))
+                                  img_monitoria_photo: "icon-monitoria-quimica",
+                                  banner_monitoria: "banner-monitoria-quimica"))
 
         list_salas.append(Monitoria(id: 3,
-                                  nome_sala: "Portal do Passado",
+                                  nome_sala: "Reminiscências do Passado",
                                   ImageName: "ImageFill",
                                   has_entered: false,
                                   nome_responsavel: "Túlio",
@@ -54,7 +56,8 @@ class SalaData: ObservableObject {
                                   img_anexos: "predio_image",
                                   array_messages: ["Olá pessoal, sejam bem-vindos a monitoria! Aqui temos como foco o estudo dos conteúdos tangentes à cadeira de \'Resistência dos Materiaios\' ", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 40,
-                                  img_monitoria_photo: "icon-monitoria-hist"))
+                                  img_monitoria_photo: "icon-monitoria-hist",
+                                  banner_monitoria: "banner-monitoria-hist"))
 
         list_salas.append(Monitoria(id: 4,
                                   nome_sala: "Rust",
@@ -68,10 +71,11 @@ class SalaData: ObservableObject {
                                   img_anexos: "rust_image",
                                   array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 50,
-                                  img_monitoria_photo: "icon-monitoria-rust"))
+                                  img_monitoria_photo: "icon-monitoria-rust",
+                                  banner_monitoria: "banner-monitoria-rust"))
 
         list_salas.append(Monitoria(id: 5,
-                                  nome_sala: "Cálculo 1",
+                                  nome_sala: "Cálculo 2",
                                   ImageName: "ImageFill",
                                   has_entered: false,
                                   nome_responsavel: "Gevane Santos",
@@ -82,7 +86,8 @@ class SalaData: ObservableObject {
                                   img_anexos: "math_conj_image",
                                   array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 60,
-                                  img_monitoria_photo: "icon-monitoria-calculo"))
+                                  img_monitoria_photo: "icon-monitoria-calculo",
+                                  banner_monitoria: "banner-monitoria-calculo"))
 
         list_salas.append(Monitoria(id: 6,
                                   nome_sala: "Matemática Discreta",
@@ -96,7 +101,8 @@ class SalaData: ObservableObject {
                                   img_anexos: "math_disc_image",
                                   array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 70,
-                                  img_monitoria_photo: "icon-monitoria-mat-discreta"))
+                                  img_monitoria_photo: "icon-monitoria-mat-discreta",
+                                  banner_monitoria: "banner-monitoria-mat-discreta"))
 
         list_salas.append(Monitoria(id: 7,
                                   nome_sala: "Monitoria de Lua",
@@ -110,6 +116,20 @@ class SalaData: ObservableObject {
                                   img_anexos: "lua_image",
                                   array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
                                   limit_students: 80,
-                                  img_monitoria_photo: "icon-monitoria-lua"))
+                                  img_monitoria_photo: "icon-monitoria-lua",
+                                  banner_monitoria: "banner-monitoria-lua"))
+//        list_salas.append(Monitoria(id: 8,
+//                                  nome_sala: "Reminiscencia do Passado",
+//                                  ImageName: "ImageFill",
+//                                  has_entered: false,
+//                                  nome_responsavel: "Marcos Cunha",
+//                                  matricula_responsavel: "20222011060105",
+//                                  hora_disponivel: "18h50 - 19h50",
+//                                  array_alunos: ["Mateus Oliveira", "Roberto Ierusalimschy", "Mariana Costa", "Evelyn Pinto", "Gaby Lima", "Flávio Almeida", "Ruth Fernandes", "Silvio Santos"],
+//                                  description: "Venha aprender desde o básico ao avançado em Lua",
+//                                  img_anexos: "lua_image",
+//                                  array_messages: ["Olá pessoal, sejam bem-vindos a essa monitoria!", "Entrem no grupo do Telegram t.me/teste"],
+//                                  limit_students: 80,
+//                                  img_monitoria_photo: "icon-monitoria-hist"))
     }
 }

@@ -33,8 +33,6 @@ struct MonitoriaView: View {
     let corner_radius_number = 20.0
     
     var body: some View {
-        let image = Image("\(monitoria.ImageName)")
-            
         //let nome_monitoria: String
         //let ImageName: String
         //let has_entered: Bool
@@ -55,7 +53,8 @@ struct MonitoriaView: View {
             has_entered: (monitoria.has_entered),
             img_anexos: ("\(monitoria.img_anexos)"),
             limit_students: ((monitoria.limit_students)),
-            img_monitoria_photo: ("\(monitoria.img_monitoria_photo)")
+            img_monitoria_photo: ("\(monitoria.img_monitoria_photo)"),
+            banner_monitoria: ("\(monitoria.banner_monitoria)")
         
         ))
         
@@ -66,7 +65,7 @@ struct MonitoriaView: View {
                     RoundedRectangle(cornerRadius: corner_radius_number)
                         .stroke(Color.gray.opacity(0))
                         .background(
-                            image
+                            Image("\(monitoria.banner_monitoria)")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: width_number, height: height_number)
@@ -74,7 +73,10 @@ struct MonitoriaView: View {
                         )
                         .frame(width: width_number, height: height_number)
                         .padding([.leading, .trailing], 20)
-                    
+//                        .overlay(
+//                                RoundedRectangle(cornerRadius: corner_radius_number)
+//                                    .stroke(Color.white, lineWidth: 2)
+//                            )
                     HStack {
 //                        Implementar o design da Tela Inicial 2 aqui
                         
@@ -84,6 +86,7 @@ struct MonitoriaView: View {
                                 .foregroundStyle(.white)
                                 .font(.title3)
                                 .bold()
+                                .shadow(color: .black, radius: 5)
                             
                             // #############################################
                             
@@ -96,6 +99,7 @@ struct MonitoriaView: View {
                                 Text(" ")
                                 
                                 Text("\(monitoria.nome_responsavel)")
+                                    .shadow(color: .black, radius: 5)
                             }
                             .fontWeight(.regular)
                             // #############################################
@@ -152,7 +156,8 @@ struct MonitoriaView: View {
                                            img_anexos: "lua_image",
                                            array_messages: ["Ola pessoal, sejam bem vindos a essa monitoria", "Entrem no grupo do telegram t.me/teste"],
                                            limit_students: 20,
-                                           img_monitoria_photo: "icon-monitoria"
+                                           img_monitoria_photo: "icon-monitoria",
+                                           banner_monitoria: "banner-monitoria"
                                           ))
     }
 }

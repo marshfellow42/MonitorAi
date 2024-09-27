@@ -38,7 +38,7 @@ struct ProfileScreen: View {
                     
                     Image("banner-monitoria")
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                     // setando a posicao do banner de fundo
                         .frame(width: 512,
